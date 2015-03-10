@@ -29,29 +29,31 @@ public class Personnes {
     public void acheter(Appartement app){
         
         monAppart = app;
-        
         System.out.println( monAppart + "" + app.getPrix());
-        
-         /*System.out.println("adresse du bien : " + bien);
-         System.out.println("prix du bien : " + prix);*/
+
     }
     
     /**
      * 
-     * @param prix
-     * @param valeur
+     * @param augm
      */
-    
+    public void augmenter(double augm){
+        
+        //this.prix = this.prix * augm;
+        double newPrice = (monAppart.getPrix()) * augm;
+        System.out.println("nouveau prix du bien : " + newPrice);
+        
+    }
     
     /**
      * 
-     * @param bien
      */
     public void vendre(Appartement app, Personnes pers){
+
+        //pers.monAppart = app;
+        pers.acheter(monAppart); //plus logique
+        System.out.println(nom + " a vendu a " + pers.nom + " ce truc : " + pers.monAppart.getAdresse());
         
         this.monAppart = null;
-        
-        pers.monAppart = app;
-        System.out.println(nom + " a vendu a " + pers.nom + " ce truc : " + pers.monAppart.getAdresse());
     }
 }

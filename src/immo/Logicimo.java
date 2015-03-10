@@ -20,7 +20,8 @@ public class Logicimo {
         p1.acheter(ap1);
         
         
-        ap1.augmenter(1.1);
+        //ap1.augmenter(1.1);
+        p1.augmenter(1.1);
         
         p1.vendre(ap1,p2);
         
