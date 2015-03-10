@@ -15,13 +15,14 @@ public class Logicimo {
         Personnes p1 = new Personnes("toto");
         Personnes p2 = new Personnes("Jean");
         
-        Appartement ap1 = new Appartement();
+        Appartement ap1 = new Appartement("Avenue de la formation - LYON", 1000.0);
         
-        p1.acheter(ap1.adresse,ap1.prix);
+        p1.acheter(ap1);
         
-        p1.augmenter(ap1.prix, 10);
         
-       // p1.vendre(ap1,p2);
+        ap1.augmenter(1.1);
+        
+        p1.vendre(ap1,p2);
         
 
         

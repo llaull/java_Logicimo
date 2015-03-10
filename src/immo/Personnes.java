@@ -7,14 +7,14 @@ package immo;
 public class Personnes {
     
     private String nom;
-    private boolean proprio;
+    private Appartement monAppart;
     
     Personnes(String nom){
         this.nom = nom;
-        proprio = false;
+        this.monAppart = null;
         System.out.println("petit nom : " + nom);
         
-        if (proprio == true) {
+        if (monAppart == null) {
             System.out.println("est proprio" );
         } else {
             System.out.println("n'est proprio" );
@@ -24,13 +24,16 @@ public class Personnes {
     
     /**
      * 
-     * @param bien
-     * @param prix
+     * @param app
      */
-    public void acheter(String bien, Double prix){
+    public void acheter(Appartement app){
         
-         System.out.println("adresse du bien : " + bien);
-         System.out.println("prix du bien : " + prix);
+        monAppart = app;
+        
+        System.out.println( monAppart + "" + app.getPrix());
+        
+         /*System.out.println("adresse du bien : " + bien);
+         System.out.println("prix du bien : " + prix);*/
     }
     
     /**
@@ -38,18 +41,17 @@ public class Personnes {
      * @param prix
      * @param valeur
      */
-    public void augmenter(Double prix, int valeur){
-        
-        Double prixTotal = prix * valeur/100 + prix;
-        System.out.println("nouveau prix du bien : " + prixTotal);
-        
-    }
+    
     
     /**
      * 
      * @param bien
      */
-    public void vendre(String bien){
+    public void vendre(Appartement app, Personnes pers){
         
+        this.monAppart = null;
+        
+        pers.monAppart = app;
+        System.out.println(nom + " a vendu a " + pers.nom + " ce truc : " + pers.monAppart.getAdresse());
     }
 }
